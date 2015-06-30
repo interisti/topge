@@ -43,7 +43,7 @@ function onReload() {
 				});
 				
 			chrome.storage.sync.get('settings', function (data) {
-				if (data.data && data.data.visible == 'unique')
+				if (data.data && data.settings.visible == 'unique')
 					chrome.browserAction.setBadgeText({ text: unique });
 				else
 					chrome.browserAction.setBadgeText({ text: hits });
