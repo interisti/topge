@@ -11,7 +11,25 @@
 	}
 </style>
 
+<script src="../../js/jquery/jquery.min.js"></script>
+<script src="browser_action.js"></script>
+
 <div id="mainPopup">
-	<input id="domain"></input>
-	<button>Save</button>
+	<!--<input id="domain"></input>
+	<button>Save</button>-->
+	
+	<input type="radio" value="hits" id="hits_radio" name="show_setting">Show Hits</input>
+	<input type="radio" value="unique" id="unique_radio" name="show_setting">Show Unique</input>
+	
+	</br>
+	</br>
+	</br>
+	
+	<label>Hits:</label>
+	<label id="hits"></label>
+	
+	</br>
+	
+	<label>Unique:</label>
+	<label id="unique"></label>
 </div>

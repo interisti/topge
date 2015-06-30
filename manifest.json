@@ -18,7 +18,8 @@
     {
       "js": [
         "js/jquery/jquery.min.js",
-        "src/bg/background.js"
+        "src/bg/background.js",
+        "src/browser_action/browser_action.js"
       ],
       "matches": [
         "http://*/*",
