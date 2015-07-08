@@ -1,0 +1,194 @@
+@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700&subset=latin,cyrillic);
+
+body {
+    width: 300px;
+    height: 300px;
+    margin: 0;
+    font-family: "PT Sans", sans-serif;
+    font-size: 14px;
+    overflow: hidden;
+    background: #F4F5FB;
+}
+
+a, button {
+    outline: none;
+}
+
+#header {
+    background: #ffffff;
+    height: 50px;
+    border-bottom: 1px solid #E1E4F2;
+}
+
+.actions {
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    margin:10px;
+}
+
+#content {
+    position: relative;
+    height: 250px;
+}
+
+.btn {
+    display: block;
+    background: #ecf0f1;
+    font-size: 16px;
+    padding: 6px;
+    border-radius: 3px;
+    color: #333;
+    border: 1px solid #ecf0f1;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #ffffff;
+}
+
+.actions .btn, .buttons .btn {
+    display: inline-block;
+}
+
+.btn-back {
+    float: left;
+}
+
+.btn-settings {
+    float: right;
+}
+
+.btn-save {
+    margin: 10px 0px;
+    font-size: 16px;
+    padding: 2px 20px;
+    float: right;  
+    background: #ecf0f1;
+}
+
+.btn-save:hover {
+    background: #ffffff;
+}
+
+#preloader {
+    background: #fff;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    z-index: 999;
+}
+
+#preloader .clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 36px;
+    height: 36px;
+    margin: -20px 0 0 -20px;
+    border: 2px solid #ccc;
+    border-radius: 20px;
+}
+
+#preloader .clock .arrow_sec {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-top: 15px solid #ccc;
+    margin: -16px 0 0 -1px;
+    background: #666;
+    -webkit-animation: rotation 1s linear 0s infinite;
+    animation: rotation 1s linear 0s infinite;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+#preloader .clock .arrow_min {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border: 1px solid rgba(0, 0, 0, 0);
+    border-top: 11px solid #888;
+    margin: -12px 0 0 -1px;
+    background: #666;
+    -webkit-animation: rotation 6s linear 0s infinite;
+    animation: rotation 6s linear 0s infinite;
+    -webkit-transform-origin: center bottom;
+    transform-origin: center bottom;
+}
+
+@-webkit-keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.none {
+    display: none !important;
+}
+
+.rating {
+    height: 250px;
+}
+
+.settings {
+    padding: 0px 16px 0px 16px;
+    background: #fafafa;
+    position: relative;
+    height: 250px;
+}
+
+.option span input {
+    outline: none;
+    border: none;
+}
+
+.option {
+    line-height: 28px;
+    font-size: 16px;
+    border-bottom: 1px solid #e8ebef;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+.option span {
+    float: right;
+    border: 2px solid #ecf0f1;
+    background: #fff;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.option select {
+    height: 28px;
+    float: right;
+    border: 2px solid #ecf0f1;
+    padding: 5px;
+    border-radius: 3px;
+    background: #fff;
+    min-width: 180px;
+}
+
+.option:last-child {
+    border-bottom: 0;
+    padding-top: 0px;
+    padding-bottom: 0;
+}

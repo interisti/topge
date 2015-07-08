@@ -2,26 +2,32 @@
 
 $(document).ready(function () {
 
-
-	$('input[type=radio][name=show_setting]').change(function () {
-		chrome.storage.sync.set({ 'settings': { visible: this.value } },
-			function () {
-			});
+	$(".btn-settings").on("click", function () {
+		$('.btn-settings, .btn-back').toggleClass('none');
+		$('.rating, .settings').toggleClass('none');
 	});
 
-	chrome.storage.sync.get('data', function (data) {
-		var hits_text = data.data.hits + "(Yesterday: " + data.data.yesterday_hits + ")";
-		$("#hits").text(hits_text);
-		var unique_text = data.data.unique + "(Yesterday: " + data.data.yesterday_unique + ")";
-		$("#unique").text(unique_text);
-
-		chrome.storage.sync.get('settings', function (settings) {
-			if (!settings || !settings.settings.visible) {
-				$("#hits_radio").prop("checked", true);
-			} else {
-				$("#" + settings.settings.visible + "_radio").prop("checked", true);
-			}
-		});
+	$(".btn-back").on("click", function () {
+		$('.btn-settings, .btn-back').toggleClass('none');
+		$('.rating, .settings').toggleClass('none');
 	});
 
+	$(".btn-save").on("click", function () {
+		localStorage["settings_domain"] = $("#settings_domain").val();
+		localStorage["settings_track_active"] = $("#settings_track_active").prop('checked');
+		localStorage["settings_display"] = $("#settings_display").val();
+		
+		chrome.runtime.sendMessage('initialize');
+	});
+	
+	// settings
+	$("#settings_domain").val(localStorage["settings_domain"]);
+	$("#settings_track_active").prop('checked', localStorage["settings_track_active"] === "true");
+	$("#settings_display").val(localStorage["settings_display"]);
+
+	$("#hits").text((localStorage['hits'] || 0) + "(Yesterday: " + (localStorage['yesterday_hits'] || 0) + ")");
+	$("#unique").text((localStorage['unique'] || 0) + "(Yesterday: " + (localStorage['yesterday_unique'] || 0) + ")");
+	$("#" + (localStorage['settings_badge_show'] || 'hits') + "_radio").prop("checked", true);
+
+	$('#preloader').addClass('none');
 });

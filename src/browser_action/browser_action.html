@@ -1,35 +1,61 @@
-<!doctype html>
-<style type="text/css">
-	#mainPopup {
-		padding: 10px;
-		height: 200px;
-		width: 400px;
-		font-family: Helvetica, Ubuntu, Arial, sans-serif;
-	}
-	h1 {
-		font-size: 2em;
-	}
-</style>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../../css/fontello.css">
+		<link rel="stylesheet" type="text/css" href="browser_action.css">
+		<script src="../../js/jquery/jquery.min.js"></script>
+		<script src="../topgeClient.js"></script>
+		<script src="browser_action.js"></script>
+	</head>
+	<body>
+		<div id="header">
+			<div class="actions">
+				<button class="btn btn-back none">
+					<i class="icon-forward"></i>
+				</button>
+				<button class="btn btn-settings">
+					<i class="icon-cog"></i>
+				</button>
+			</div>
+		</div>
+		<div id="content">
+			<div class="content rating">
+				<div id="preloader">
+					<div class="clock">
+						<div class="arrow_sec"></div>
+						<div class="arrow_min"></div>
+					</div>
+				</div>
+				<label>Hits:</label>
+				<label id="hits"></label>
+				</br>
+				<label>Unique:</label>
+				<label id="unique"></label>
+			</div>
+			<div class="content settings none">
+				<div class="option">
+					<label>Domain:</label>
+					<span>
+						<input type="url" id="settings_domain" />
+					</span>
+				</div>
+				<div class="option">
+					<label>Track active:</label>
+					<span>
+						<input type="checkbox" id="settings_track_active"/>
+					</span>
+				</div>
+				<div class="option">
+					<label>Display:</label>
+					<select id="settings_display">
+						<option value="hits">Hits</option>
+						<option value="unique">Unique</option>
+					</select>
+				</div>
+				<div class="option">
+					<button class="btn btn-save">Save</button>
+				</div>
+			</div>
+		</div>
+	</body>
 
-<script src="../../js/jquery/jquery.min.js"></script>
-<script src="browser_action.js"></script>
-
-<div id="mainPopup">
-	<!--<input id="domain"></input>
-	<button>Save</button>-->
-	
-	<input type="radio" value="hits" id="hits_radio" name="show_setting">Show Hits</input>
-	<input type="radio" value="unique" id="unique_radio" name="show_setting">Show Unique</input>
-	
-	</br>
-	</br>
-	</br>
-	
-	<label>Hits:</label>
-	<label id="hits"></label>
-	
-	</br>
-	
-	<label>Unique:</label>
-	<label id="unique"></label>
-</div>
+</html>

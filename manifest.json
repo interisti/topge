@@ -35,6 +35,7 @@
   "permissions": [
     "http://www.top.ge/",
     "alarms",
-    "storage"
+    "storage",
+    "tabs"
   ]
 }
