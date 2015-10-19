@@ -1,2 +1,2 @@
 # topge
-topge counter - chrome extension
+chrome extension for your website rankings monitoring
